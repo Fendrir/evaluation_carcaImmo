@@ -1,0 +1,39 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="adm_administrateur")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ */
+class Administrateur extends BaseUser
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="adm_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adm_prenom", type="string", length=255)
+     */
+    private $Prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adm_telephone", type="string", length=255)
+     */
+    private $Telephone;
+
+}
