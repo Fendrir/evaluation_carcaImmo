@@ -26,14 +26,14 @@ class Administrateur extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="adm_prenom", type="string", length=255)
+     * @ORM\Column(name="adm_prenom", type="string", length=255, nullable=true)
      */
     private $Prenom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adm_telephone", type="string", length=255)
+     * @ORM\Column(name="adm_telephone", type="string", length=255, nullable=true)
      */
     private $Telephone;
 
