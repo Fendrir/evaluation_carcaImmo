@@ -49,6 +49,27 @@ class Annonce
      */
     private $prix;
 
+    /**
+     * Many Annonce have One Administrator.
+     * @ORM\ManyToOne(targetEntity="Administrateur")
+     * @ORM\JoinColumn(name="adm_id", referencedColumnName="adm_id")
+     */
+    private $administrateur;
+
+    /**
+     * Many Annonce have One Client.
+     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
+     */
+    private $client;
+
+    /**
+     * Many Annonce have One Type.
+     * @ORM\ManyToOne(targetEntity="Type")
+     * @ORM\JoinColumn(name="typ_id", referencedColumnName="typ_id")
+     */
+    private $type;
+
 
     /**
      * Get id
@@ -79,7 +100,7 @@ class Annonce
      *
      * @return string
      */
-    public function gettitre()
+    public function getTitre()
     {
         return $this->titre;
     }
@@ -91,7 +112,7 @@ class Annonce
      *
      * @return Annonce
      */
-    public function setphoto($photo)
+    public function setPhoto($photo)
     {
         $this->photo = $photo;
 
@@ -109,51 +130,50 @@ class Annonce
     }
 
     /**
-     * Set annNbPieces
+     * Set nbPieces
      *
-     * @param integer $annNbPieces
+     * @param integer $nbPieces
      *
      * @return Annonce
      */
-    public function setAnnNbPieces($annNbPieces)
+    public function setNbPieces($nbPieces)
     {
-        $this->annNbPieces = $annNbPieces;
+        $this->nbPieces = $nbPieces;
 
         return $this;
     }
 
     /**
-     * Get annNbPieces
+     * Get nbPieces
      *
      * @return int
      */
-    public function getAnnNbPieces()
+    public function getNbPieces()
     {
-        return $this->annNbPieces;
+        return $this->nbPieces;
     }
 
     /**
-     * Set annPrix
+     * Set prix
      *
-     * @param float $annPrix
+     * @param float $prix
      *
      * @return Annonce
      */
-    public function setAnnPrix($annPrix)
+    public function setPrix($prix)
     {
-        $this->annPrix = $annPrix;
+        $this->prix = $prix;
 
         return $this;
     }
 
     /**
-     * Get annPrix
+     * Get prix
      *
      * @return float
      */
-    public function getAnnPrix()
+    public function getPrix()
     {
-        return $this->annPrix;
+        return $this->prix;
     }
 }
-

@@ -49,6 +49,27 @@ class Annonce
      */
     private $prix;
 
+    /**
+     * Many Annonce have One Administrator.
+     * @ORM\ManyToOne(targetEntity="Administrateur")
+     * @ORM\JoinColumn(name="adm_id", referencedColumnName="adm_id")
+     */
+    private $administrateur;
+
+    /**
+     * Many Annonce have One Client.
+     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
+     */
+    private $client;
+
+    /**
+     * Many Annonce have One Type.
+     * @ORM\ManyToOne(targetEntity="Type")
+     * @ORM\JoinColumn(name="typ_id", referencedColumnName="typ_id")
+     */
+    private $type;
+
 
     /**
      * Get id
@@ -154,5 +175,77 @@ class Annonce
     public function getPrix()
     {
         return $this->prix;
+    }
+
+    /**
+     * Set administrateur
+     *
+     * @param \AppBundle\Entity\Administrateur $administrateur
+     *
+     * @return Annonce
+     */
+    public function setAdministrateur(\AppBundle\Entity\Administrateur $administrateur = null)
+    {
+        $this->administrateur = $administrateur;
+
+        return $this;
+    }
+
+    /**
+     * Get administrateur
+     *
+     * @return \AppBundle\Entity\Administrateur
+     */
+    public function getAdministrateur()
+    {
+        return $this->administrateur;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Annonce
+     */
+    public function setClient(\AppBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \AppBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \AppBundle\Entity\Type $type
+     *
+     * @return Annonce
+     */
+    public function setType(\AppBundle\Entity\Type $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \AppBundle\Entity\Type
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

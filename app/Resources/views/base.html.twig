@@ -22,6 +22,9 @@
                 <li><a href="#">Page 2</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{ path('admin') }}">Espace Administrateur</a></li>
+                {% endif %}
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li><a href="{{ path('fos_user_profile_show') }}"><span class="glyphicon glyphicon-user"></span> {{ app.user.username }}</a></li>
                     <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-out"></span>{{ ' Déconnexion'|trans({}, 'FOSUserBundle') }}</a></li>
