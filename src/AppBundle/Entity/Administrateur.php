@@ -28,14 +28,14 @@ class Administrateur extends BaseUser
      *
      * @ORM\Column(name="adm_prenom", type="string", length=255, nullable=true)
      */
-    private $Prenom;
+    private $prenom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="adm_telephone", type="string", length=255, nullable=true)
      */
-    private $Telephone;
+    private $telephone;
 
 
     /**
@@ -47,7 +47,7 @@ class Administrateur extends BaseUser
      */
     public function setPrenom($prenom)
     {
-        $this->Prenom = $prenom;
+        $this->prenom = $prenom;
 
         return $this;
     }
@@ -59,7 +59,7 @@ class Administrateur extends BaseUser
      */
     public function getPrenom()
     {
-        return $this->Prenom;
+        return $this->prenom;
     }
 
     /**
@@ -71,7 +71,7 @@ class Administrateur extends BaseUser
      */
     public function setTelephone($telephone)
     {
-        $this->Telephone = $telephone;
+        $this->telephone = $telephone;
 
         return $this;
     }
@@ -83,6 +83,6 @@ class Administrateur extends BaseUser
      */
     public function getTelephone()
     {
-        return $this->Telephone;
+        return $this->telephone;
     }
 }
