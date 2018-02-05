@@ -18,8 +18,8 @@
             </div>
             <ul class="nav navbar-nav">
                 <li id="id_li_Accueil" class=""><a href="{{ path('homepage') }}">Accueil<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
+                <li><a href="{{ path('app_annonce_annoncetab') }}">Annonces Immobilières</a></li>
+                <li><a href="">Page 2</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if is_granted('ROLE_ADMIN') %}

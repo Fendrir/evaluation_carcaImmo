@@ -1,0 +1,45 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Page de l'annonce{% endblock %}
+
+{% block body %}
+<div class="container">
+
+        {% if annoncePage is defined %}
+            <h1 class="text-center">Recherche de "{{ annoncePage.titre }}"</h1>
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Titre</th>
+                                    <th class="text-center">Types</th>
+                                    <th class="text-center">Nombres de pièces</th>
+                                    <th class="text-center">Photo</th>
+                                    <th class="text-center">Prix</th>
+                                    <th class="text-center">Propriétaire</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    
+
+                                        <tr>
+                                            <td class="text-center">{{ annoncePage.titre }}</td>
+                                            <td class="text-center">{{ annoncePage.type.nom }}</td>
+                                            <td class="text-center">{{ annoncePage.nbPieces }}</td>
+                                            <td class="text-center">{{ annoncePage.photo }}</td>
+                                            <td class="text-center">{{ annoncePage.prix }}</td>
+                                            <td class="text-center">{{ annoncePage.client.nom }}</td>
+                                        </tr>
+                            
+                                    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        {% endif %}
+    </div>
+{% endblock %}

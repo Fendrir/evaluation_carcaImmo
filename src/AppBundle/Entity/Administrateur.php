@@ -85,4 +85,9 @@ class Administrateur extends BaseUser
     {
         return $this->telephone;
     }
+
+    public function __toString()
+    {
+        return $this->getPrenom();
+    }
 }
