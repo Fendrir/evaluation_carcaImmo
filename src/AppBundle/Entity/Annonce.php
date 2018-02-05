@@ -67,6 +67,13 @@ class Annonce
     private $prix;
 
     /**
+     * @var text
+     *
+     * @ORM\Column(name="ann_description", type="text")
+     */
+    private $description;
+
+    /**
      * Many Annonce have One Administrator.
      * @ORM\ManyToOne(targetEntity="Administrateur")
      * @ORM\JoinColumn(name="adm_id", referencedColumnName="adm_id")
@@ -306,5 +313,29 @@ class Annonce
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Annonce
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

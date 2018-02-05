@@ -41,7 +41,7 @@ class Annonce
 
 
     /**
-     * @Vich\UploadableField(mapping="photos_images", fileNameProperty="photo")
+     * @Vich\UploadableField(mapping="photo", fileNameProperty="photo")
      * @var File
      */
     private $photoFile;
@@ -65,6 +65,13 @@ class Annonce
      * @ORM\Column(name="ann_prix", type="float")
      */
     private $prix;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="ann_description", type="text")
+     */
+    private $descritpion;
 
     /**
      * Many Annonce have One Administrator.
@@ -282,5 +289,29 @@ class Annonce
     public function getPhotoFile()
     {
         return $this->photoFile;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Annonce
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }
