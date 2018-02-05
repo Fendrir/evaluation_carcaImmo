@@ -7,7 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
-    app.path.product_images: /uploads/photos/annonces
+    app.path.annonces_images: /uploads/photos/annonces
 
 
 framework:
@@ -150,15 +150,43 @@ assetic:
             output: "fonts/glyphicons-halflings-regular.woff"
 
 easy_admin:
+    site-name: '<em style="font-size: 80%;">Carca-Immo</em>'
     entities:
-        - AppBundle\Entity\Administrateur
-        - AppBundle\Entity\Annonce
-        - AppBundle\Entity\Client
-        - AppBundle\Entity\Type
+        Administrateur:
+            class: AppBundle\Entity\Administrateur
+
+        Annonce:
+            class: AppBundle\Entity\Annonce
+            label: 'Annonce'
+            form:
+                fields:
+                    - titre
+                    - { property: 'photoFile', type: 'vich_image', help: 'Taille max 1.5Mo / Format .jpeg et .png' }
+                    - { property: 'nbPieces', label: "Nombre de pièces"}
+                    - { property: 'prix', type: 'money', type_options: { currency: 'EUR' } }
+                    - administrateur
+                    - client
+                    - type
+            list:
+                fields:
+                    - titre
+                    - { property: 'photo', type: 'image', base_path: '/uploads/photos/annonces' }
+                    - nbPieces
+                    - prix
+                    - client
+                    - administrateur
+                    - type
+
+        Client:
+            class: AppBundle\Entity\Client
+        
+        Type:
+            class: AppBundle\Entity\Type
 
 vich_uploader:
     db_driver: orm
     mappings:
-        photos_images:
-            uri_prefix:         '%app.path.annonces_images%'
+        photo:
+            uri_prefix: /uploads/photos/annonces
             upload_destination: '%kernel.root_dir%/../web/uploads/photos/annonces'
+            namer: vich_uploader.namer_uniqid

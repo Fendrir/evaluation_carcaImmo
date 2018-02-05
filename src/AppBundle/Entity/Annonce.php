@@ -11,6 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="ann_annonce")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AnnonceRepository")
+ * @Vich\Uploadable
  * 
  */
 class Annonce
@@ -40,7 +41,7 @@ class Annonce
 
 
     /**
-     * @Vich\UploadableField(mapping="photos_images", fileNameProperty="photo")
+     * @Vich\UploadableField(mapping="photo", fileNameProperty="photo")
      * @var File
      */
     private $photoFile;
@@ -281,5 +282,29 @@ class Annonce
     public function getPhotoFile()
     {
         return $this->photoFile;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Annonce
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

@@ -43,9 +43,9 @@ class AnnonceController extends Controller
             $query=$em->createQuery("select a from AppBundle\Entity\Annonce as a
             where a.titre like :p "
             )->setParameter("p","%".$parameter."%");
-            // dump($query);
+            $annonces=$query->getResult();
+            // dump($titre);
             // die();
-            $titre=$query->getResult();
         }
 
         return $this->render('AppBundle:Annonce:annonce_tab.html.twig', array(

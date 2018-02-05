@@ -30,7 +30,7 @@
                                             <td class="text-center">{{ annoncePage.titre }}</td>
                                             <td class="text-center">{{ annoncePage.type.nom }}</td>
                                             <td class="text-center">{{ annoncePage.nbPieces }}</td>
-                                            <td class="text-center">{{ annoncePage.photo }}</td>
+                                            <td class="text-center"><img class="img_cadre" src="{{ vich_uploader_asset(annoncePage, 'photoFile') }}" alt="photo_annonce"></td>
                                             <td class="text-center">{{ annoncePage.prix }}</td>
                                             <td class="text-center">{{ annoncePage.client.nom }}</td>
                                         </tr>

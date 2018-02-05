@@ -3,12 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Annonce
  *
  * @ORM\Table(name="ann_annonce")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AnnonceRepository")
+ * @Vich\Uploadable
+ * 
  */
 class Annonce
 {
@@ -34,6 +38,19 @@ class Annonce
      * @ORM\Column(name="ann_photo", type="string", length=255)
      */
     private $photo;
+
+
+    /**
+     * @Vich\UploadableField(mapping="photos_images", fileNameProperty="photo")
+     * @var File
+     */
+    private $photoFile;
+
+    /**
+     * @ORM\Column(type="datetime",nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @var int
@@ -175,5 +192,95 @@ class Annonce
     public function getPrix()
     {
         return $this->prix;
+    }
+
+    /**
+     * Set administrateur
+     *
+     * @param \AppBundle\Entity\Administrateur $administrateur
+     *
+     * @return Annonce
+     */
+    public function setAdministrateur(\AppBundle\Entity\Administrateur $administrateur = null)
+    {
+        $this->administrateur = $administrateur;
+
+        return $this;
+    }
+
+    /**
+     * Get administrateur
+     *
+     * @return \AppBundle\Entity\Administrateur
+     */
+    public function getAdministrateur()
+    {
+        return $this->administrateur;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Annonce
+     */
+    public function setClient(\AppBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \AppBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \AppBundle\Entity\Type $type
+     *
+     * @return Annonce
+     */
+    public function setType(\AppBundle\Entity\Type $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \AppBundle\Entity\Type
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function setPhotoFile(File $photo = null)
+    {
+        $this->photoFile = $photo;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($photo) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getPhotoFile()
+    {
+        return $this->photoFile;
     }
 }

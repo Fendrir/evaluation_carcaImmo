@@ -53,7 +53,7 @@
                                     <td class="text-center"><a id="" class=" btn" href="/annonces/pageAnnonce/{{ annonce.titre }}">{{ annonce.titre }}</a></td>
                                     <td class="text-center">{{ annonce.type.nom }}</td>
                                     <td class="text-center">{{ annonce.nbPieces }}</td>
-                                    <td class="text-center">{{ annonce.photo }}</td>
+                                    <td class="text-center"><img class="img_cadre" src="{{ vich_uploader_asset(annonce, 'photoFile') }}" alt="photo_annonce"></td>
                                     <td class="text-center">{{ annonce.prix }}</td>
                                     <td class="text-center">{{ annonce.client.nom }}</td>
                                 </tr>
