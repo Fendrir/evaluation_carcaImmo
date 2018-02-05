@@ -7,6 +7,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    app.path.product_images: /uploads/photos/annonces
+
 
 framework:
     #esi: ~
@@ -153,3 +155,10 @@ easy_admin:
         - AppBundle\Entity\Annonce
         - AppBundle\Entity\Client
         - AppBundle\Entity\Type
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        photos_images:
+            uri_prefix:         '%app.path.annonces_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/photos/annonces'

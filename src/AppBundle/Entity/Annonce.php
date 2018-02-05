@@ -3,12 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Annonce
  *
  * @ORM\Table(name="ann_annonce")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AnnonceRepository")
+ * 
  */
 class Annonce
 {
@@ -34,6 +37,19 @@ class Annonce
      * @ORM\Column(name="ann_photo", type="string", length=255)
      */
     private $photo;
+
+
+    /**
+     * @Vich\UploadableField(mapping="photos_images", fileNameProperty="photo")
+     * @var File
+     */
+    private $photoFile;
+
+    /**
+     * @ORM\Column(type="datetime",nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @var int
@@ -247,5 +263,23 @@ class Annonce
     public function getType()
     {
         return $this->type;
+    }
+
+    public function setPhotoFile(File $photo = null)
+    {
+        $this->photoFile = $photo;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($photo) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getPhotoFile()
+    {
+        return $this->photoFile;
     }
 }
