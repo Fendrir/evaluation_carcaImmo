@@ -27,7 +27,7 @@ CREATE TABLE `typ_type` (
   `typ_nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`typ_id`),
   UNIQUE KEY `UNIQ_2833081550F504D3` (`typ_nom`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `typ_type` (
 
 LOCK TABLES `typ_type` WRITE;
 /*!40000 ALTER TABLE `typ_type` DISABLE KEYS */;
-INSERT INTO `typ_type` VALUES (3,'Appartement'),(1,'Maison'),(2,'Studio');
+INSERT INTO `typ_type` VALUES (3,'Appartement'),(5,'Location'),(1,'Maison'),(2,'Studio'),(4,'Vente');
 /*!40000 ALTER TABLE `typ_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-05 23:09:55
+-- Dump completed on 2018-02-06 10:39:36

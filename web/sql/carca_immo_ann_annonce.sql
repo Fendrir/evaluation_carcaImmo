@@ -40,7 +40,7 @@ CREATE TABLE `ann_annonce` (
   CONSTRAINT `FK_466D3B10278CD074` FOREIGN KEY (`typ_id`) REFERENCES `typ_type` (`typ_id`),
   CONSTRAINT `FK_466D3B104E949F2D` FOREIGN KEY (`adm_id`) REFERENCES `adm_administrateur` (`adm_id`),
   CONSTRAINT `FK_466D3B10BC4EE2B0` FOREIGN KEY (`cli_id`) REFERENCES `cli_client` (`cli_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `ann_annonce` (
 
 LOCK TABLES `ann_annonce` WRITE;
 /*!40000 ALTER TABLE `ann_annonce` DISABLE KEYS */;
-INSERT INTO `ann_annonce` VALUES (1,'maison de jardin','une photo',5,50000,1,1,1,NULL,''),(2,'un appart trop cool','une photo',3,25000,1,2,2,NULL,''),(3,'Super appart a vendre très ... \"rose\"','une photo',4,45000,1,3,3,NULL,''),(4,'test immo','5a78b710b99fb967919091.png',8,220000,1,2,1,'2018-02-05 20:57:04','ceci est une super descrition de ma maison de riche aller ! Ciao !');
+INSERT INTO `ann_annonce` VALUES (1,'maison de jardin','5a79725ab061b108996750.jpeg',5,50000,1,1,1,'2018-02-06 10:16:10','superbe maison'),(2,'un appart trop cool','5a7971c9e5190898456395.jpg',3,25000,1,2,2,'2018-02-06 10:13:45','grand appart de luxe à vendre'),(3,'Super appart a vendre très ... \"rose\"','5a796b9c2e80d770935493.jpg',4,45000,1,3,3,'2018-02-06 09:47:24','super appartement luxe à vendre'),(4,'test immo','5a78b710b99fb967919091.png',8,220000,1,2,1,'2018-02-05 20:57:04','ceci est une super descrition de ma maison de riche aller ! Ciao !'),(5,'appart en location','5a7975cfc1185761486721.jpg',4,500,1,5,5,'2018-02-06 10:30:55','super appart au milieu de tout dans le trou du cul du monde'),(6,'Maison à vendre en mode carte postale','5a79762b6ee76591406823.jpg',7,450000,1,4,4,'2018-02-06 10:32:27','maison connecté, aucune prise éléectrique tout est branché sur batterie et sur panneau solaire');
 /*!40000 ALTER TABLE `ann_annonce` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-05 23:09:55
+-- Dump completed on 2018-02-06 10:39:36

@@ -28,7 +28,7 @@ CREATE TABLE `cli_client` (
   `cli_prenom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `cli_telephone` int(11) NOT NULL,
   PRIMARY KEY (`cli_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `cli_client` (
 
 LOCK TABLES `cli_client` WRITE;
 /*!40000 ALTER TABLE `cli_client` DISABLE KEYS */;
-INSERT INTO `cli_client` VALUES (1,'Chico','Momo',212121212),(2,'chichi','elsa',303030303),(3,'Chuchu','Emmanuel',202010101);
+INSERT INTO `cli_client` VALUES (1,'Chico','Momo',212121212),(2,'chichi','elsa',303030303),(3,'Chuchu','Emmanuel',202010101),(4,'chouchi','Pierre',424242424),(5,'kiki','cloum',546977458),(6,'Dédé','didier',645879654);
 /*!40000 ALTER TABLE `cli_client` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-05 23:09:55
+-- Dump completed on 2018-02-06 10:39:36

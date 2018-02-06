@@ -165,9 +165,9 @@ easy_admin:
                     - { property: 'nbPieces', label: "Nombre de pièces"}
                     - { property: 'prix', type: 'money', type_options: { currency: 'EUR' } }
                     - description
-                    - administrateur
                     - client
                     - type
+                    - administrateur
             list:
                 fields:
                     - titre
@@ -176,8 +176,8 @@ easy_admin:
                     - prix
                     - description
                     - client
-                    - administrateur
                     - type
+                    - administrateur
 
         Client:
             class: AppBundle\Entity\Client
