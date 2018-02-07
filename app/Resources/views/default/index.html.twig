@@ -4,51 +4,78 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center">Bienvenue sur le site web numéro Dernier en France</h2>
-                <h5 class="text-center">La référence pour ne pas réussir une vente immobilière</h5>
-                <h5 class="text-center">Un doigt, beaucoup d'amour</h5>
+            <div class="col-md-12 panel panel-primary">
+                <h2 class="text-center text-primary">Bienvenue sur le site web numéro Dernier en France</h2>
+                <h4 class="text-center text-danger">La référence pour ne pas réussir une vente immobilière</h4>
+                <h4 class="text-center text-danger">Un doigt, beaucoup d'amour</h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <h2>Présentation du site</h2>
+            <div class="col-md-12 panel panel-primary">
+                <h2 class="text-center text-primary">Présentation du site</h2>
 
-                <p>
+                <h4 class="text-center">
                     Ce site à pour but de Formation dans le cadre de l'évaluation Simplon
-                </p>
+                </h4>
 
-                <p>
+                <h4 class="text-center">
                    J'ai choisi de construire ce site web sur le FrameWork Symfony 3.3 en php pour plusieurs raisons : 
-                </p>
+                </h4>
 
-                <ul class="list-group">
-                    <li class="puceOut list-group-item"><h4>Base de donnée</h4></li>
-                    <li class="puceOut list-group-item">Gain de temps pour la créations d'une base de donnée</li>
-                    <li class="puceOut list-group-item">Facilité pour faire les jointures entres les tables de la bdd ( foreign key )</li>
-                    <li class="puceOut list-group-item">Facilité pour modifier une table avec les entity</li>
-                    <li class="puceOut list-group-item">la base donnée gérée par les entity est plus rapide pour effectuer des requetes avec le bundle Doctrine</li>
-                    <li class="puceOut list-group-item">Avec le bundle Vich j'ai pu en rajouter des champs, faire en sorte de pouvoir upload l'adresse d'une image pour ensuite l'afficher</li>
-                </ul>
+                <div class=" panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Base de donnée</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="puceOut list-group-item text-success">Gain de temps pour la créations d'une base de donnée</li>
+                            <li class="puceOut list-group-item text-success">Facilité pour faire les jointures entres les tables de la bdd ( foreign key )</li>
+                            <li class="puceOut list-group-item text-success">Facilité pour modifier une table avec les entity</li>
+                            <li class="puceOut list-group-item text-success">la base donnée gérée par les entity est plus rapide pour effectuer des requetes avec le bundle Doctrine</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <ul class="list-group">
-                    <li class="puceOut list-group-item"><h4>Les Bundles</h4></li>
-                    <li class="puceOut list-group-item">Ils sont "rapides" à mettre en place et permettent de pouvoir gagner beaucoup de temps</li>
-                    <li class="puceOut list-group-item">Ils sont personnalisable, soit adaptable au projet</li>
-                    <li class="puceOut list-group-item">Les bundles utilisés ici sont : FosUserBundle, Vich, EasyAdmin</li>
-                </ul>
+                <div class=" panel panel-warning">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Les Bundles</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="puceOut list-group-item text-warning">Ils sont "rapides" à mettre en place et permettent de pouvoir gagner beaucoup de temps</li>
+                            <li class="puceOut list-group-item text-warning">Ils sont personnalisable, soit adaptable au projet</li>
+                            <li class="puceOut list-group-item text-warning">Les bundles utilisés ici sont : FosUserBundle, Vich, Doctrine, EasyAdmin</li>
+                            <li class="puceOut list-group-item text-warning">FosUserBundle pour faire le système de session utilisateur</li>
+                            <li class="puceOut list-group-item text-warning">Avec le bundle Vich j'ai pu en rajouter des champs, faire en sorte de pouvoir upload l'adresse d'une image pour ensuite l'afficher</li>
+                            <li class="puceOut list-group-item text-warning">Doctrine pour faire la base de donnée</li>
+                            <li class="puceOut list-group-item text-warning">EasyAdmin pour le back office</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <ul class="list-group">
-                    <li class="puceOut list-group-item"><h4>Back office</h4></li>
-                    <li class="puceOut list-group-item">Toute la partie Back office est gérée par le Bundle EasyAdmin</li>
-                    <li class="puceOut list-group-item">La personalisation de Bundle ce passe dans le config.yml ( afficher l'existant des entitées de la bdd, édition de l'éxistant de la bdd, et suppression)</li>
-                    <li class="puceOut list-group-item">Cette partie n'est accessible que si l'utilisateur est un admin</li>
-                </ul>
+                <div class=" panel panel-danger">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Back office</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="puceOut list-group-item text-danger">Toute la partie Back office est gérée par le Bundle EasyAdmin</li>
+                            <li class="puceOut list-group-item text-danger">La personalisation de Bundle ce passe dans le config.yml ( afficher l'existant des entitées de la bdd, édition de l'éxistant de la bdd, et suppression)</li>
+                            <li class="puceOut list-group-item text-danger">Cette partie n'est accessible que si l'utilisateur est un admin</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <ul class="list-group">
-                    <li class="puceOut list-group-item"><h4>Les Controllers</h4></li>
-                    <li class="puceOut list-group-item">Le moteur des requetes, j'ai mis dans un controller tout ce que j'avais besoin pour faire fonctionner mes deux pages, les recherches et les routes de mes pages</li>
-                </ul>
+                <div class=" panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Les Controllers</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="puceOut list-group-item text-info">Le moteur des requetes, j'ai mis dans un controller tout ce que j'avais besoin pour faire fonctionner mes deux pages, les recherches et les routes de mes pages</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
