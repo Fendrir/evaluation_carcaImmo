@@ -5,7 +5,6 @@ This is a Symfony Project Evaluation.
 
 # **Presentation** :
 
-# *Presentation* :
 
 My project is about the creation of a website for real estate sale.
 
