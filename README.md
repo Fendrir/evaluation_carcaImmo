@@ -16,14 +16,14 @@ All announces are created only by the administrator. He have a back office panel
 The administrator can create the client who want an announce, a new type of category if he need one more, he can administrate the accounts saves in the website and he can create new announces.
 
 When he **create** a **new announce** he must enter many things :
-..* the title of the announce
-..* the photo file (1.5 Mo or less )
-..* the number of rooms
-..* the price
-..* a description
-..* the client ( who was created before the creation of the announce )
-..* the type of the announce ( who was created before the creation of the announce too )
-..* link the administrator who create the announce
+ * the title of the announce
+ * the photo file (1.5 Mo or less )
+ * the number of rooms
+ * the price
+ * a description
+ * the client ( who was created before the creation of the announce )
+ * the type of the announce ( who was created before the creation of the announce too )
+ * link the administrator who create the announce
 
 When all of it is done he can save and the announce is created.
 
@@ -50,9 +50,9 @@ You can find the folder at /web/sql
 
 first clone this repository
 
-..* do a **__composer update__**
-..* you can go to app/config/config.yml and change what you want to change for your database information
-..* next do a **__php bin/console doctrine:database:create__**
-..* next step you can do **__php bin/console doctrine:schema:update --force__** to create all columns and foreign key
-..* next you can you the dump of the database in **/web/sql** you have four files you can take it and mount this files in your database.
-..* and finly you can do in your terminal : **__php bin/console server:start__** or **__server:run__**
+  * do a **__composer update__**
+ * you can go to app/config/config.yml and change what you want to change for your database information
+ * next do a **__php bin/console doctrine:database:create__**
+ * next step you can do **__php bin/console doctrine:schema:update --force__** to create all columns and foreign key
+ * next you can you the dump of the database in **/web/sql** you have four files you can take it and mount this files in your database.
+ * and finly you can do in your terminal : **__php bin/console server:start__** or **__server:run__**
