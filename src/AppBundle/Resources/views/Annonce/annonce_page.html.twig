@@ -3,15 +3,13 @@
 {% block title %}Page de l'annonce{% endblock %}
 
 {% block body %}
-<div class="container">
+    <div class="container">
 
         {% if annoncePage is defined %}
             <h1 class="text-center">Recherche de "{{ annoncePage.titre }}"</h1>
 
                 <div class="row">
-
                     <div class="col-xs-12">
-
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -25,26 +23,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                    
-
-                                        <tr>
-                                            <td class="text-center">{{ annoncePage.titre }}</td>
-                                            <td class="text-center">{{ annoncePage.type.nom }}</td>
-                                            <td class="text-center">{{ annoncePage.nbPieces }}</td>
-                                            <td class="text-center">{{ annoncePage.description }}</td>
-                                            <td class="text-center"><img class="img_cadre" src="{{ vich_uploader_asset(annoncePage, 'photoFile') }}" alt="photo_annonce"></td>
-                                            <td class="text-center">{{ annoncePage.prix }}</td>
-                                            <td class="text-center">{{ annoncePage.client.nom }}</td>
-                                        </tr>
-                            
-                                    
+                                <tr>
+                                    <td class="text-center">{{ annoncePage.titre }}</td>
+                                    <td class="text-center">{{ annoncePage.type.nom }}</td>
+                                    <td class="text-center">{{ annoncePage.nbPieces }}</td>
+                                    <td class="text-center">{{ annoncePage.description }}</td>
+                                    <td class="text-center"><img class="img_cadre" src="{{ vich_uploader_asset(annoncePage, 'photoFile') }}" alt="photo_annonce"></td>
+                                    <td class="text-center">{{ annoncePage.prix }}</td>
+                                    <td class="text-center">{{ annoncePage.client.nom }}</td>
+                                </tr>
                             </tbody>
                         </table>
-	
+
                         <form>
                             <button class="btn btn-info" type="button" onclick="history.go(-1)">Revenir</button>
                         </form>
-
                     </div>
                 </div>
         {% endif %}
