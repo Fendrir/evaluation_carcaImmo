@@ -41,7 +41,7 @@ CREATE TABLE `adm_administrateur` (
   UNIQUE KEY `UNIQ_6625026392FC23A8` (`username_canonical`),
   UNIQUE KEY `UNIQ_66250263A0D96FBF` (`email_canonical`),
   UNIQUE KEY `UNIQ_66250263C05FB297` (`confirmation_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,7 +50,7 @@ CREATE TABLE `adm_administrateur` (
 
 LOCK TABLES `adm_administrateur` WRITE;
 /*!40000 ALTER TABLE `adm_administrateur` DISABLE KEYS */;
-INSERT INTO `adm_administrateur` VALUES (1,'febvre','febvre','papao1@hotmail.fr','papao1@hotmail.fr',1,NULL,'$2y$13$apFEK7wnCXRGpXesfcr56ONcFoBxiIl4BEesf3tw4pnO5bX0mtMEW','2018-02-06 09:38:38',NULL,NULL,'a:1:{i:0;s:16:\"ROLE_SUPER_ADMIN\";}','julien','0672691800');
+INSERT INTO `adm_administrateur` VALUES (1,'febvre','febvre','papao1@hotmail.fr','papao1@hotmail.fr',1,NULL,'$2y$13$apFEK7wnCXRGpXesfcr56ONcFoBxiIl4BEesf3tw4pnO5bX0mtMEW','2018-02-07 09:37:31',NULL,NULL,'a:1:{i:0;s:16:\"ROLE_SUPER_ADMIN\";}','julien','0672691800');
 /*!40000 ALTER TABLE `adm_administrateur` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -63,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-06 10:39:36
+-- Dump completed on 2018-02-07 10:31:14
