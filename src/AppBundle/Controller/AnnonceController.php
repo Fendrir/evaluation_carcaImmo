@@ -25,57 +25,52 @@ class AnnonceController extends Controller
     public function AnnonceTabAction(Request $request)
     {
 
-        $em = $this->getDoctrine()->getManager();
-        $annonces = $em->getRepository('AppBundle:Annonce')->findBy(array(),array("titre" => "ASC"));
-        $types = $em->getRepository('AppBundle:Type')->findBy(array(),array("nom" => "ASC"));
-
-        $titre = $em->getRepository("AppBundle:Annonce")->findAll(); 
-        
-        $form=$this->createFormBuilder()
-        ->add("recherche",SearchType::class, array(
-            'attr' => [
-                'required' => false,
-            ]))
-
-        ->add("type",ChoiceType::class, array(
-            'attr' => [
-                'id' => "type",
-                'class' => 'selectpicker',
-                'placeholder' => 'type',
-                'onchange' => 'this.form.submit()'
-            ],
-            'choices' => $types,
-            'choice_label' => 'nom',
-            'choice_value' => 'id',
-        ))
-        ->getForm();
-
-        $form->handleRequest($request);
-        
-        if($form->isValid() && $form->isSubmitted())
-        {
-            $data=$form->getData("type");
-            $parameter=$data["recherche"];
-            $filtre = $data["type"];
-            
-            $query=$em->createQuery("select a from AppBundle\Entity\Annonce as a
-            where a.titre like :p
-            and a.type = :t"
-            )
-            ->setParameter("p","%".$parameter."%")
-            ->setParameter("t", $filtre);
-            
-            $annonces=$query->getResult();
-            // dump($titre);
-            // die();
+        $ems = $this->getDoctrine()->getManager();
+        $type = $ems->getRepository('AppBundle:Type')->findAll();
+        $choice = ['Sélectionnez un type' => null];
+        foreach ($type as $key => $value) {
+            $nom = $value->getNom();
+            $idType = $value->getId();
+            $choice += [$nom => $idType];
         }
-
+        $em = $this->getDoctrine()->getManager();
+        $annonces = $em->getRepository('AppBundle:Annonce')->findAll();
+        $form = $this->createFormBuilder()
+        ->add('recherche', Searchtype::class, array('required' => false,
+        'label' => ' ',
+        'attr' => array('placeholder' => 'Recherche')))
+        ->add('type', ChoiceType::class, array('choices' => $choice,
+        'attr' => array('class' => 'selectpicker'),
+        'label' => ' '))
+        ->getForm();
+        $form->handlerequest($request);
+        if($form->isValid() && $form->isSubmitted()){
+            $data = $form->getData();
+            $parameter = $data['recherche'];
+            $selecteur = $data['type'];
+            if(!$selecteur){
+                $query = $em->createQuery('select a from 
+                AppBundle\Entity\Annonce as a  where a.titre like :p')
+                    ->setParameter('p', '%' . $parameter . '%');
+                $annonces = $query->getResult();
+            }else{
+                $query = $em->createQuery("select a from 
+                AppBundle\Entity\Annonce as a JOIN a.type t where a.titre like :p
+                AND t.id = :id")
+                ->setParameters(['p' => '%' . $parameter . '%',
+                'id' => $selecteur
+                ]);
+                
+                $annonces = $query->getResult();
+            }
+        }
+        // dump($selecteur);
+        // die();
+        
         return $this->render('AppBundle:Annonce:annonce_tab.html.twig', array(
             'annonces' => $annonces,
-            'type' => $types,
-            'titre'=>$titre,
-            'type'=>$types,
-            'form'=>$form->createView(),
+            'form' => $form->createView(),
+            
         ));
     }
 

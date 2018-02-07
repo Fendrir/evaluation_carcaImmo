@@ -1,5 +1,55 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>Je suis un accueil</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Bienvenue sur le site web numéro Dernier en France</h2>
+                <h5 class="text-center">La référence pour ne pas réussir une vente immobilière</h5>
+                <h5 class="text-center">Un doigt, beaucoup d'amour</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Présentation du site</h2>
+
+                <p>
+                    Ce site à pour but de Formation dans le cadre de l'évaluation Simplon
+                </p>
+
+                <p>
+                   J'ai choisi de construire ce site web sur le FrameWork Symfony 3.3 en php pour plusieurs raisons : 
+                </p>
+
+                <ul class="list-group">
+                    <li class="puceOut list-group-item"><h4>Base de donnée</h4></li>
+                    <li class="puceOut list-group-item">Gain de temps pour la créations d'une base de donnée</li>
+                    <li class="puceOut list-group-item">Facilité pour faire les jointures entres les tables de la bdd ( foreign key )</li>
+                    <li class="puceOut list-group-item">Facilité pour modifier une table avec les entity</li>
+                    <li class="puceOut list-group-item">la base donnée gérée par les entity est plus rapide pour effectuer des requetes avec le bundle Doctrine</li>
+                    <li class="puceOut list-group-item">Avec le bundle Vich j'ai pu en rajouter des champs, faire en sorte de pouvoir upload l'adresse d'une image pour ensuite l'afficher</li>
+                </ul>
+
+                <ul class="list-group">
+                    <li class="puceOut list-group-item"><h4>Les Bundles</h4></li>
+                    <li class="puceOut list-group-item">Ils sont "rapides" à mettre en place et permettent de pouvoir gagner beaucoup de temps</li>
+                    <li class="puceOut list-group-item">Ils sont personnalisable, soit adaptable au projet</li>
+                    <li class="puceOut list-group-item">Les bundles utilisés ici sont : FosUserBundle, Vich, EasyAdmin</li>
+                </ul>
+
+                <ul class="list-group">
+                    <li class="puceOut list-group-item"><h4>Back office</h4></li>
+                    <li class="puceOut list-group-item">Toute la partie Back office est gérée par le Bundle EasyAdmin</li>
+                    <li class="puceOut list-group-item">La personalisation de Bundle ce passe dans le config.yml ( afficher l'existant des entitées de la bdd, édition de l'éxistant de la bdd, et suppression)</li>
+                    <li class="puceOut list-group-item">Cette partie n'est accessible que si l'utilisateur est un admin</li>
+                </ul>
+
+                <ul class="list-group">
+                    <li class="puceOut list-group-item"><h4>Les Controllers</h4></li>
+                    <li class="puceOut list-group-item">Le moteur des requetes, j'ai mis dans un controller tout ce que j'avais besoin pour faire fonctionner mes deux pages, les recherches et les routes de mes pages</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
