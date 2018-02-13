@@ -7,7 +7,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
+ * Administrateur
  *
  * @ORM\Table(name="adm_administrateur")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AdministrateurRepository")

@@ -24,17 +24,19 @@ class AnnonceController extends Controller
      */
     public function AnnonceTabAction(Request $request)
     {
-
         $ems = $this->getDoctrine()->getManager();
         $type = $ems->getRepository('AppBundle:Type')->findAll();
         $choice = ['Sélectionnez un type' => null];
+
         foreach ($type as $key => $value) {
             $nom = $value->getNom();
             $idType = $value->getId();
             $choice += [$nom => $idType];
         }
+
         $em = $this->getDoctrine()->getManager();
         $annonces = $em->getRepository('AppBundle:Annonce')->findAll();
+
         $form = $this->createFormBuilder()
         ->add('recherche', Searchtype::class, array('required' => false,
         'label' => ' ',
@@ -44,6 +46,7 @@ class AnnonceController extends Controller
         'label' => ' '))
         ->getForm();
         $form->handlerequest($request);
+        
         if($form->isValid() && $form->isSubmitted()){
             $data = $form->getData();
             $parameter = $data['recherche'];
